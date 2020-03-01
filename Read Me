@@ -1,0 +1,48 @@
+It uses Packages like org.w3c.dom so going with newer jdk versions will be more efficent.
+It downloads datasets from worldweatheronline api.
+It downloads datasets based on a location.
+For a single location it downloads monthly datasets. In each day it downloads hourly based weather.
+It includes leap year count to get the day count automattically with zero errors.
+**** Weather Data ****
+  1. Sunrise
+  2. Sunset
+  3. MoonRise
+  4. Moonset
+  5. Moon Phase
+  6. Moon Illumination
+  7. Max Temperture
+  8. Min Temperture
+  9. Avg Temperature
+  10. Sun Hours
+  11. UV Index
+  *****************************
+       Hourly Based x 24
+  *****************************
+  1. Time
+  2. Temperture
+  3. Wind Speed
+  4. Wind Direction 16 Points
+  5. Weather Desc
+  6. Precip MM
+  7. Humidity
+  8. Visibility
+  9. Pressure
+  10. Pressure
+  11. Cloud Cover
+  12. Heat Index
+  13. Dew point 
+  14. Wind Chill
+  15. Wind Gust
+  16. Feels Like
+  17. UV Index
+  *****************************
+  
+**** THINGS TO CONSIDER ****
+The API key provided is an already expired key you should have to purchase one your self before using this API.
+In the Console it outputs all the above values
+In the CSV file it only outputs Hourly Based data
+In a single CSV file it contains 8761 columns 
+For a single CSV the file size will be approximately 600KB
+Since it's outputting in the console the program will slow down your pc
+  As tested * for i5 8th gen processor for a single location it will take 30mins.
+            * for i3 2nd gen processor for a single location it will take 58mins.
