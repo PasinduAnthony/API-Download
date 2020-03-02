@@ -8,12 +8,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-public class Test_HTTP_XML {
+public class NoConsoleOutput {
 
     public static void main(String[] args) throws IOException {
-        Test_HTTP_XML oobj_Test_HTTP_XML=new Test_HTTP_XML();
+        NoConsoleOutput oobj_Test_HTTP_XML=new NoConsoleOutput();
         String location="Mahiyangana";
-        String apiKey="f8ac0bf574ce43de85e143409200103";
+        String apiKey="6f9e97ab828b4766938164958202902";
         int days=0;
         int obj=0;
         for(int year=2009;year<2020;year++) {
@@ -83,77 +83,34 @@ public class Test_HTTP_XML {
                 if (errNodes.getLength() > 0) {
                     for(int j=0;j<days;j++) {
                         Element err = (Element) errNodes.item(0);
-                        System.out.println("Sunrise - " + err.getElementsByTagName("date").item(j).getTextContent());
-                        System.out.println("Sunrise - " + err.getElementsByTagName("sunrise").item(j).getTextContent());
-                        System.out.println("Sunset - " + err.getElementsByTagName("sunset").item(j).getTextContent());
-                        System.out.println("Moonrise - " + err.getElementsByTagName("moonrise").item(j).getTextContent());
-                        System.out.println("Moonset - " + err.getElementsByTagName("moonset").item(j).getTextContent());
-                        System.out.println("Moon Phase - " + err.getElementsByTagName("moon_phase").item(j).getTextContent());
-                        System.out.println("Moon Illumination - " + err.getElementsByTagName("moon_illumination").item(j).getTextContent());
-                        System.out.println("Max Temperature C - " + err.getElementsByTagName("maxtempC").item(j).getTextContent());
-                        System.out.println("Min Temperature C - " + err.getElementsByTagName("mintempC").item(j).getTextContent());
-                        System.out.println("Average Temperature C - " + err.getElementsByTagName("avgtempC").item(j).getTextContent());
-                        System.out.println("Sun Hour - " + err.getElementsByTagName("sunHour").item(j).getTextContent());
-                        System.out.println("UV Index - " + err.getElementsByTagName("uvIndex").item(j).getTextContent());
                         String time="";
                         for(int h=0;h<24;h++){
-                            System.out.println("");
                             text=(j+1)+"/"+month+"/"+year;
                             if((h)<10){
                                 time="0"+h+":00";
                             }else{
                                 time=h+":00";
                             }
-                            //System.out.println("Time - " + err.getElementsByTagName("hourly").item(count).getTextContent());
-                            System.out.println("Time - " + err.getElementsByTagName("time").item(count).getTextContent());
                             text=text+" "+time;
-                            System.out.println("Temp C - " + err.getElementsByTagName("tempC").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("tempC").item(count).getTextContent();
-                            System.out.println("Wind Speed KMPH - " + err.getElementsByTagName("windspeedKmph").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("windspeedKmph").item(count).getTextContent();
-                            //System.out.println("Wind Dir Degree - " + err.getElementsByTagName("winddirDegree").item(count).getTextContent());
-                            System.out.println("Wind Dir 16 Point - " + err.getElementsByTagName("winddir16Point").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("winddir16Point").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("weatherCode").item(count).getTextContent());
-                            //System.out.println("Time - " + err.getElementsByTagName("weatherIconUrl").item(count).getTextContent());
-                            System.out.println("Weather Desc - " + err.getElementsByTagName("weatherDesc").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("weatherDesc").item(count).getTextContent();
-                            System.out.println("Precip MM - " + err.getElementsByTagName("precipMM").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("precipMM").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("precipInches").item(count).getTextContent());
-                            System.out.println("Humidity - " + err.getElementsByTagName("humidity").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("humidity").item(count).getTextContent();
-                            System.out.println("Visibility - " + err.getElementsByTagName("visibility").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("visibility").item(count).getTextContent();
-                            //System.out.println(" - " + err.getElementsByTagName("visibilityMiles").item(count).getTextContent());
-                            System.out.println("Pressure - " + err.getElementsByTagName("pressure").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("pressure").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("pressureInches").item(count).getTextContent());
-                            System.out.println("Cloud Cover - " + err.getElementsByTagName("cloudcover").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("cloudcover").item(count).getTextContent();
-                            System.out.println("Heat Index C - " + err.getElementsByTagName("HeatIndexC").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("HeatIndexC").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("HeatIndexF").item(count).getTextContent());
-                            System.out.println("Dew Point C - " + err.getElementsByTagName("DewPointC").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("DewPointC").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("DewPointF").item(count).getTextContent());
-                            System.out.println("Wind Chill C - " + err.getElementsByTagName("WindChillC").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("WindChillC").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("WindChillF").item(count).getTextContent());
-                            //System.out.println("Time - " + err.getElementsByTagName("WindGustMiles").item(count).getTextContent());
-                            System.out.println("Wind Gust Kmph - " + err.getElementsByTagName("WindGustKmph").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("WindGustKmph").item(count).getTextContent();
-                            System.out.println("Feels Like C - " + err.getElementsByTagName("FeelsLikeC").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("FeelsLikeC").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("FeelsLikeF").item(count).getTextContent());
-                            System.out.println("UV Index - " + err.getElementsByTagName("uvIndex").item(count).getTextContent());
                             text=text+","+err.getElementsByTagName("uvIndex").item(count).getTextContent();
-                            //System.out.println("Time - " + err.getElementsByTagName("hourly").item(count).getTextContent());
                             count++;
                             bw.newLine();
                             bw.write(text);
                         }
-                        System.out.println("");
                     }
 
                 }
